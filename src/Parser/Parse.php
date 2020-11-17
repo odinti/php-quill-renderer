@@ -239,7 +239,7 @@ abstract class Parse implements ParserInterface, ParserAttributeInterface
     {
         if ($this->valid === true) {
             /**
-             * Before processing through the deltas, generate new deltas by splliting
+             * Before processing through the deltas, generate new deltas by splitting
              * on all new lines, will make it much simpler to work out which
              * delta belong to headings, lists etc.
              */
@@ -292,7 +292,12 @@ abstract class Parse implements ParserInterface, ParserAttributeInterface
                                         break;
 
                                     default:
-                                        $this->insert($quill);
+                                        if (is_array($quill['insert'])) {
+                                            $this->compoundInsert($quill);
+                                        } else {
+                                            $this->insert($quill);
+                                        }
+
                                         break;
                                 }
                             }
@@ -501,7 +506,7 @@ abstract class Parse implements ParserInterface, ParserAttributeInterface
     /**
      * Checks the delta json is valid and can be decoded
      *
-     * @param $quill_json Quill json string
+     * @param array $quill_json Quill json string
      *
      * @return boolean
      */

@@ -7,13 +7,13 @@ namespace DBlackborough\Quill\Delta\Html;
 use DBlackborough\Quill\Settings;
 
 /**
- * Default delta class for compound image inserts, multiple attributes
+ * Default delta class for compound video inserts, multiple attributes
  *
  * @author Dean Blackborough <dean@g3d-development.com>
  * @copyright Dean Blackborough
  * @license https://github.com/deanblackborough/php-quill-renderer/blob/master/LICENSE
  */
-class CompoundImage extends Delta
+class CompoundVideo extends Delta
 {
     /**
      * Set the initial properties for the delta
@@ -31,9 +31,9 @@ class CompoundImage extends Delta
      * @param string $attribute Attribute name
      * @param string $value Attribute value to assign
      *
-     * @return CompoundImage
+     * @return CompoundVideo
      */
-    public function setAttribute($attribute, $value): CompoundImage
+    public function setAttribute($attribute, $value): CompoundVideo
     {
         $this->attributes[$attribute] = $value;
 
@@ -47,16 +47,16 @@ class CompoundImage extends Delta
      */
     public function render(): string
     {
-        $image_attributes = '';
+        $video_attributes = '';
         foreach ($this->attributes as $attribute => $value) {
             if (
                 is_string($attribute) &&
                 is_string($value) &&
                 in_array($attribute, Settings::ignoredCustomAttributes()) === false
             ) {
-                $image_attributes .= "{$attribute}=\"{$value}\" ";
+                $video_attributes .= "{$attribute}=\"{$value}\" ";
             }
         }
-        return "<img src=\"{$this->insert}\" {$image_attributes}/>";
+        return '<iframe class="ql-video" frameborder="0" allowfullscreen="true" '. $video_attributes .'src="' . $this->escape($this->insert) . '"></iframe>';
     }
 }

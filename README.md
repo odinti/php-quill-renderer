@@ -16,7 +16,7 @@ supported are listed in the table below, the goal is to eventually support every
 
 [Quill](https://github.com/quilljs/quill) is a modern WYSIWYG editor built for compatibility and extensibility.
 
-## Planned features
+## Planned features (v4.00.0 dev starting soon, 2019-11-25)
 
 If you check the table below you will note that I don't support all of Quills 
 features, that is definitely the plan, however, before I add support for new 
@@ -162,6 +162,7 @@ for use under the MIT License (MIT).
 * [Lode Claassen](https://github.com/lode) [PR121] - Missing supported format in exception messages.
 * [Lode Claassen](https://github.com/lode) [PR122] - Validation code DRY.
 * [Lode Claassen](https://github.com/lode) [PR123] - Allow already decoded json to be passed to parser.
+* [Nicholas Humphries](https://github.com/Humni) [PR128] - Videos with attributes not supported.
 
 ## Coding standards credits
 
