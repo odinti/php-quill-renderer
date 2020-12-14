@@ -121,7 +121,7 @@ class Compound extends Delta
         $this->tags();
 
         if ($this->isLink === true) {
-            $this->html .= "<a href=\"{$this->link}\">";
+            $this->html .= "<a href=\"{$this->link}\" target=\"_blank\" rel=\"noopener noreferrer\">";
         }
 
         $element_attributes = '';
