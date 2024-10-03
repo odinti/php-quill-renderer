@@ -3,6 +3,23 @@
 
 Full changelog for PHP Quill Renderer
 
+## Unreleased
+
+* Added GitHub actions.
+* Documentation improvements, thank you [Theo W](https://github.com/Theo-W).
+
+## v4.00.2 - 2021-04-28 (v4.00.1 - testing pre-release)
+
+* Fixed an issue rendering single item lists, they don't get closed if they are the first delta, thank you [hybridvision](https://github.com/hybridvision).
+* Minor code style fixes.
+* Corrections to README.
+
+## v4.00.0 - 2021-02-16
+
+* Update requirements to PHP 8 or PHP 7.4.
+* Update tests to run on latest version of PHP Unit.
+* Removed Travis config, will switch to GitHub actions at some point soon.
+
 ## v3.18.1 - 2019-12-10
 
 * Videos with custom attributes supported, thank you [Nicholas Humphries](https://github.com/Humni).
